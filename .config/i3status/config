@@ -11,7 +11,8 @@ order += "wireless wlp2s0"
 order += "load"
 order += "disk /"
 order += "battery 0"
-order += "cpu_temperature 0"
+order += "volume master"
+#order += "cpu_temperature 0"
 #order += "memory"
 order += "tztime local"
 
@@ -55,7 +56,7 @@ load {
 cpu_temperature 0 {
         format = "🌡️ %degrees°C"
 	format_above_threshold = "🌡️ %degrees°C ⚠️ "
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
 }
 
 # Disabled - Currently using i3status 2.12, memory module is added in 2.13
@@ -72,3 +73,12 @@ disk "/" {
 #read_file uptime {
 #        path = "/proc/uptime"
 #}
+
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
