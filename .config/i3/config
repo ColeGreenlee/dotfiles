@@ -184,5 +184,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume @DEFAUL
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 
-# Lock
+# Lock (Mod + i)
 bindsym $mod+i exec i3lock -i ~/Pictures/snek.png -c 000000 -t
+
+
+# Firefox Hotkey (Mod + b)
+bindsym $mod+b exec firefox
