@@ -4,7 +4,9 @@
 set $mod Mod1
 
 # font for window titles
-font pango:monospace 8
+#font pango:Comfortaa Bold 9
+#font pango:DejaVu Sans Mono 9
+font pango:DroidSansMono 8
 
 # drag floating windows - $mod + mouse
 floating_modifier $mod
@@ -139,7 +141,7 @@ bar {
 # Startup Commands
 exec --no-startup-id synclient VertScrollDelta=-111
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id feh --bg-center ~/Pictures/Wallpapers/mountain.jpg
+exec --no-startup-id feh --bg-center ~/Pictures/Wallpapers/bg_small.jpg
 
 
 # Screen Brightness Controls
@@ -154,15 +156,15 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 
 # Lock (Mod + i)
-bindsym $mod+i exec i3lock -i ~/Pictures/Wallpapers/mountain.jpg
+bindsym $mod+i exec i3lock -i ~/Pictures/Wallpapers/bg_small.jpg
 
 
 # Firefox Hotkey (Mod + b)
 bindsym $mod+b exec firefox
 
 # DPI Toggle
-bindsym $mod+shift+bracketright exec "xrandr --output eDP1 --scale 1x1"
-bindsym $mod+shift+bracketleft exec "xrandr --output eDP1 --scale 1.50x1.50"
+bindsym $mod+shift+bracketright exec "xrandr --output eDP1 --scale 0.8x0.8"
+bindsym $mod+shift+bracketleft exec "xrandr --output eDP1 --scale 1.5x1.5"
 
 # VPN Controls
 bindsym $mod+shift+v+u exec "wg-quick up wg0"
